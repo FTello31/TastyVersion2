@@ -22,6 +22,10 @@
 <!--        <item name="android:fontFamily">@font/Roboto-Medium</item>-->
     </style>
 
+<!--&lt;!&ndash;    theme para el app_bar_main &ndash;&gt;-->
+<!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+<!--    theme para el menu ... del appbar-->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
