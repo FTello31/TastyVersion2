@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home">
+
+    <action
+        android:id="@+id/action_global_myAccountFragment"
+        app:destination="@id/myAccountFragment" />
+    <!--    <fragment-->
+    <!--        android:id="@+id/viewBalanceFragment"-->
+    <!--        android:name="com.NetliDev.CategoryTabs.CategoriesFragment"-->
+    <!--        android:label="fragment_view_balance"-->
+    <!--        tools:layout="@layout/fragment_view_balance" />-->
+
+    <fragment
+        android:id="@+id/salesman"
+        android:name="com.NetliDev.Fragments.SalesmanFragment"
+        android:label="Salesman"
+        tools:layout="@layout/fragment_salesman" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.NetliDev.Fragments.MyAccountFragment"
+        android:label="My Account"
+        tools:layout="@layout/fragment_my_account" />
+    <fragment
+        android:id="@+id/home"
+        android:name="com.NetliDev.Fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <!--        <action-->
+        <!--            android:id="@+id/action_mainFragment_to_sendMoneyGraph"-->
+        <!--            app:destination="@id/sendMoneyGraph" />-->
+        <action
+            android:id="@+id/action_homeFragment_to_categoriesFragment"
+            app:destination="@id/categories" />
+        <action
+            android:id="@+id/action_homeFragment_to_salesmanFragment"
+            app:destination="@id/salesman" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.NetliDev.CategoryTabs.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" />
+
+    <!--    <navigation-->
+    <!--        android:id="@+id/sendMoneyGraph"-->
+    <!--        app:startDestination="@id/chooseRecipient">-->
+    <!--        <fragment-->
+    <!--            android:id="@+id/chooseRecipient"-->
+    <!--            android:name="com.example.cashdog.cashdog.ChooseRecipient"-->
+    <!--            android:label="fragment_choose_recipient"-->
+    <!--            tools:layout="@layout/fragment_choose_recipient">-->
+    <!--            <action-->
+    <!--                android:id="@+id/action_chooseRecipient_to_chooseAmountFragment"-->
+    <!--                app:destination="@id/chooseAmountFragment" />-->
+    <!--        </fragment>-->
+    <!--        <fragment-->
+    <!--            android:id="@+id/chooseAmountFragment"-->
+    <!--            android:name="com.example.cashdog.cashdog.ChooseAmountFragment"-->
+    <!--            android:label="fragment_choose_amount"-->
+    <!--            tools:layout="@layout/fragment_choose_amount" />-->
+    <!--    </navigation>-->
+</navigation>

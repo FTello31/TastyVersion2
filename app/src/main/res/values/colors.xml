@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+<!--    &lt;!&ndash;   color for the app bar and other primary UI elements &ndash;&gt;-->
+<!--    <color name="colorPrimary">#3F51B5</color>-->
+<!--    &lt;!&ndash;   a darker variant of the primary color, used for-->
+<!--           the status bar (on Android 5.0+) and contextual app bars &ndash;&gt;-->
+<!--    <color name="colorPrimaryDark">#303F9F</color>-->
+<!--    &lt;!&ndash;   a secondary color for controls like checkboxes and text fields &ndash;&gt;-->
+<!--    <color name="colorAccent">#FF4081</color>-->
+
+
+<!--    <item name="colorPrimaryVariant">@color/design_default_color_primary_variant</item>-->
+<!--    <item name="colorSecondary">@color/design_default_color_secondary</item>-->
+<!--    <item name="colorSecondaryVariant">@color/design_default_color_secondary_variant</item>-->
+<!--    <item name="colorSurface">@color/design_default_color_surface</item>-->
+<!--    <item name="colorPrimarySurface">?attr/colorPrimary</item>-->
+<!--    <item name="colorOnPrimary">@color/design_default_color_on_primary</item>-->
+<!--    <item name="colorOnSecondary">@color/design_default_color_on_secondary</item>-->
+<!--    <item name="colorOnBackground">@color/design_default_color_on_background</item>-->
+<!--    <item name="colorOnError">@color/design_default_color_on_error</item>-->
+<!--    <item name="colorOnSurface">@color/design_default_color_on_surface</item>-->
+<!--    <item name="colorOnPrimarySurface">?attr/colorOnPrimary</item>-->
+</resources>
