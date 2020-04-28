@@ -18,7 +18,7 @@
             android:title="Salesman" />
         <item
             android:id="@+id/tastyApp"
-            android:icon="@drawable/categorias"
+            android:icon="@drawable/ic_menu_camera"
             android:title="TastyApp" />
         <item
             android:id="@+id/about"

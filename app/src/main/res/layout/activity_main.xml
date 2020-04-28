@@ -16,6 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark">
+<!--            android:theme="@style/AppTheme.AppBarOverlay">-->
+
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/main_toolbar"
@@ -42,6 +44,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemIconPadding="28dp"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/my_navigation_items" />
 
