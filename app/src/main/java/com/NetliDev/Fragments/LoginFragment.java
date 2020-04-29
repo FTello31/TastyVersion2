@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -33,15 +35,14 @@ public class LoginFragment extends Fragment {
 
     public LoginFragment() {
         // Required empty public constructor
-
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        getActivity().findViewById(R.id.main_toolbar).setVisibility(View.GONE);
-
+//        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+//        getActivity().getActionBar().hide();
     }
 
     @Override
@@ -50,7 +51,6 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         return view;
-
     }
 
     //    A ViewModel is scoped to a ViewModelStoreOwner. You can share data between the fragments
@@ -62,7 +62,6 @@ public class LoginFragment extends Fragment {
         viewModel = new ViewModelProvider(requireActivity()).get(LoginViewModel.class);
         final NavController navController = Navigation.findNavController(view);
         final View root = view;
-
 
         usernameEditText = view.findViewById(R.id.username);
         passwordEditText = view.findViewById(R.id.password);
@@ -108,5 +107,21 @@ public class LoginFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+        DrawerLayout drawer = getActivity().findViewById(R.id.drawer_layout);
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+        DrawerLayout drawer = getActivity().findViewById(R.id.drawer_layout);
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
 }
