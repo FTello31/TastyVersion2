@@ -81,7 +81,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_marginRight="5dp"
-                        android:layout_gravity="left|bottom"
+                        android:layout_gravity="start"
                         android:src="@drawable/celu" />
 
                     <TextView
@@ -103,7 +103,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_gravity="left|bottom"
+                        android:layout_gravity="start"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/email" />
 
