@@ -88,6 +88,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 Toast.makeText(MainActivity.this, "" + destination.getLabel(), Toast.LENGTH_LONG).show();
                 toolbar.setTitle(destination.getLabel());
+//                if(destination.getId() == R.id.login) {
+//                    toolbar.setVisibility(View.GONE);
+////                    bottomNavigationView.setVisibility(View.GONE);
+//                } else {
+//                    toolbar.setVisibility(View.VISIBLE);
+////                    bottomNavigationView.setVisibility(View.VISIBLE);
+//                }
             }
         });
 

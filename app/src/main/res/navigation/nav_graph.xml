@@ -14,6 +14,10 @@
     <!--        android:label="fragment_view_balance"-->
     <!--        tools:layout="@layout/fragment_view_balance" />-->
 
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment" />
+
     <fragment
         android:id="@+id/salesman"
         android:name="com.NetliDev.Fragments.SalesmanFragment"
@@ -24,6 +28,21 @@
         android:name="com.NetliDev.Fragments.MyAccountFragment"
         android:label="My Account"
         tools:layout="@layout/fragment_my_account" />
+
+    <fragment
+        android:id="@+id/categories"
+        android:name="com.NetliDev.CategoryTabs.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.NetliDev.Fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/home"
         android:name="com.NetliDev.Fragments.HomeFragment"
@@ -40,11 +59,6 @@
             app:destination="@id/salesman" />
 
     </fragment>
-    <fragment
-        android:id="@+id/categories"
-        android:name="com.NetliDev.CategoryTabs.CategoriesFragment"
-        android:label="Categories"
-        tools:layout="@layout/fragment_categories" />
 
     <!--    <navigation-->
     <!--        android:id="@+id/sendMoneyGraph"-->
