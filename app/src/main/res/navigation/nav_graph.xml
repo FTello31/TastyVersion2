@@ -14,6 +14,7 @@
     <!--        android:label="fragment_view_balance"-->
     <!--        tools:layout="@layout/fragment_view_balance" />-->
 
+
     <action
         android:id="@+id/action_global_loginFragment"
         app:destination="@id/loginFragment" />

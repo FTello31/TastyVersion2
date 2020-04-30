@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.NavDirections;
@@ -22,6 +23,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.NetliDev.Fragments.LoginViewModel;
 import com.NetliDev.R;
 import com.google.android.material.navigation.NavigationView;
 
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private AppBarConfiguration mAppBarConfiguration;
+    private NavController navController;
+    private LoginViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.id.home, R.id.categories, R.id.salesman)
                 .setDrawerLayout(drawerLayout)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -78,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 drawerLayout.closeDrawer(GravityCompat.START);
-                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment)
-                        .navigate(R.id.action_global_myAccountFragment);
+//                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment)
+                navController.navigate(R.id.action_global_myAccountFragment);
             }
         });
 
@@ -88,8 +93,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 Toast.makeText(MainActivity.this, "" + destination.getLabel(), Toast.LENGTH_LONG).show();
                 toolbar.setTitle(destination.getLabel());
-//                if(destination.getId() == R.id.login) {
-//                    toolbar.setVisibility(View.GONE);
+//                if (destination.getId() == R.id.action_global_loginFragment) {
+////                    toolbar.setVisibility(View.GONE);
+//                   getSupportActionBar().hide();
+//
 ////                    bottomNavigationView.setVisibility(View.GONE);
 //                } else {
 //                    toolbar.setVisibility(View.VISIBLE);
@@ -100,12 +107,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
-
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.app_bar_logOut) {
+            viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+            viewModel.refuseAuthentication();
+            navController.popBackStack(R.id.home, false);
+            navController.navigate(R.id.action_global_loginFragment);
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

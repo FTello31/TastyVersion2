@@ -40,9 +40,6 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getActivity().findViewById(R.id.main_toolbar).setVisibility(View.GONE);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-//        getActivity().getActionBar().hide();
     }
 
     @Override
@@ -71,6 +68,7 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingProgressBar.setVisibility(View.VISIBLE);
                 viewModel.authenticate(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
             }
@@ -94,11 +92,12 @@ public class LoginFragment extends Fragment {
                     public void onChanged(LoginViewModel.AuthenticationState authenticationState) {
                         switch (authenticationState) {
                             case AUTHENTICATED:
+                                loadingProgressBar.setVisibility(View.GONE);
                                 navController.popBackStack(); // si es autenticado vuelve a home
                                 Toast.makeText(getContext(), "AUTHENTICATED", Toast.LENGTH_SHORT).show();
-
                                 break;
                             case INVALID_AUTHENTICATION:
+                                loadingProgressBar.setVisibility(View.GONE);
                                 Snackbar.make(root,
                                         "R.string.invalid_credentials",
                                         Snackbar.LENGTH_SHORT
