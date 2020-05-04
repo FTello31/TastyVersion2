@@ -1,5 +1,7 @@
 package com.NetliDev.Fragments;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -13,12 +15,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.NetliDev.Fragments.LoginViewModel;
@@ -31,7 +36,9 @@ public class LoginFragment extends Fragment {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
+    private Switch switchRemember;
     private ProgressBar loadingProgressBar;
+    private SharedPreferences sharedPref;
 
     public LoginFragment() {
         // Required empty public constructor
@@ -63,6 +70,10 @@ public class LoginFragment extends Fragment {
         usernameEditText = view.findViewById(R.id.username);
         passwordEditText = view.findViewById(R.id.password);
         loadingProgressBar = view.findViewById(R.id.loading);
+        switchRemember = view.findViewById(R.id.switchRemember);
+
+        sharedPref = getActivity().getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
+        setPreferencesIfExist();
 
         loginButton = view.findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +82,7 @@ public class LoginFragment extends Fragment {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 viewModel.authenticate(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+
             }
         });
 
@@ -93,6 +105,7 @@ public class LoginFragment extends Fragment {
                         switch (authenticationState) {
                             case AUTHENTICATED:
                                 loadingProgressBar.setVisibility(View.GONE);
+                                saveSharedPreferences(usernameEditText.getText().toString(),passwordEditText.getText().toString());
                                 navController.popBackStack(); // si es autenticado vuelve a home
                                 Toast.makeText(getContext(), "AUTHENTICATED", Toast.LENGTH_SHORT).show();
                                 break;
@@ -106,6 +119,34 @@ public class LoginFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    private void setPreferencesIfExist() {
+        String email = sharedPref.getString("email", "");
+        String pass = sharedPref.getString("pass", "");
+
+        if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)) {
+            usernameEditText.setText(email);
+            passwordEditText.setText(pass);
+        }
+
+    }
+
+    private void saveSharedPreferences(String email, String pass) {
+        if (switchRemember.isChecked()) {
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("email", email);
+            editor.putString("pass", pass);
+            // si pongo editor.commit(); solo pasaria a la siguinete linea cuando
+            // todo lo anterior se haya ejecutado, es decir cuando se haya guardado todo
+
+            //si pongo solo
+            editor.apply();
+            // es una accion asincrona, porque se va guardando en segundo plano
+
+        }
+
     }
 
     @Override

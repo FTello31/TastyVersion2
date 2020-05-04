@@ -120,13 +120,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.app_bar_logOut) {
             viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
             viewModel.refuseAuthentication();
             navController.popBackStack(R.id.home, false);
             navController.navigate(R.id.action_global_loginFragment);
-
             return true;
         }
 
@@ -146,4 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 || super.onSupportNavigateUp();
     }
 
+
+
+    
 }

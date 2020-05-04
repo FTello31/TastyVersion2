@@ -56,6 +56,7 @@ public class HomeFragment extends Fragment {
     }
 
     // TODO Move the logic to MAIN ACTIVITY
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
