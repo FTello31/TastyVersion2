@@ -90,9 +90,9 @@ public class LoginFragment extends Fragment {
                 new OnBackPressedCallback(true) {
                     @Override
                     public void handleOnBackPressed() {
-                        // is not the appbar arrow back is the black one in the bottom of the screen
+                        // is the black triangle back button in the bottom of the screen
                         viewModel.refuseAuthentication();
-                        Toast.makeText(getContext(), "popBackStack main_fragment", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "popBackStack main_fragment", Toast.LENGTH_SHORT).show();
                         navController.popBackStack(R.id.home, false);
                     }
                 });
@@ -128,6 +128,7 @@ public class LoginFragment extends Fragment {
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)) {
             usernameEditText.setText(email);
             passwordEditText.setText(pass);
+//            viewModel.authenticate(email,pass);
         }
 
     }
@@ -138,13 +139,12 @@ public class LoginFragment extends Fragment {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("email", email);
             editor.putString("pass", pass);
-            // si pongo editor.commit(); solo pasaria a la siguinete linea cuando
-            // todo lo anterior se haya ejecutado, es decir cuando se haya guardado todo
+            
+            // synchronous
+            // editor.commit();
 
-            //si pongo solo
+            // asynchronous
             editor.apply();
-            // es una accion asincrona, porque se va guardando en segundo plano
-
         }
 
     }

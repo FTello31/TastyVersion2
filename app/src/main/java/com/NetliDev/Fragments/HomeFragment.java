@@ -70,14 +70,14 @@ public class HomeFragment extends Fragment {
                         switch (authenticationState) {
                             case AUTHENTICATED:
 //                                showWelcomeMessage();
-//                                Toast.makeText(getContext(), "HOME FRAGMENT AUHTENTICATED", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "HOME FRAGMENT AUHTENTICATED", Toast.LENGTH_SHORT).show();
                                 break;
-                            case UNAUTHENTICATED:
-                                Toast.makeText(getContext(), "HOME FRAGMENT UNAUTHENTICATED", Toast.LENGTH_SHORT).show();
-                                navController.navigate(R.id.action_global_loginFragment);
-                                break;
+//                            case UNAUTHENTICATED:
+//                                Toast.makeText(getContext(), "HOME FRAGMENT UNAUTHENTICATED", Toast.LENGTH_SHORT).show();
+//                                navController.navigate(R.id.action_global_loginFragment);
+//                                break;
                             case INVALID_AUTHENTICATION:
-                                Toast.makeText(getContext(), "HOME FRAGMENT INVALID_AUTHENTICATION", Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getContext(), "HOME FRAGMENT INVALID_AUTHENTICATION", Toast.LENGTH_SHORT).show();
                                 navController.navigate(R.id.action_global_loginFragment);
                                 break;
                         }

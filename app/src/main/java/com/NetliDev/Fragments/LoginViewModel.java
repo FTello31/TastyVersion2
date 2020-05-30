@@ -12,12 +12,12 @@ public class LoginViewModel extends ViewModel {
 
     public LoginViewModel() {
         // In this example, the user is always unauthenticated when MainActivity is launched
-        authenticationState.setValue(AuthenticationState.UNAUTHENTICATED);
+        authenticationState.setValue(AuthenticationState.INVALID_AUTHENTICATION);
         username = "";
     }
 
     public enum AuthenticationState {
-        UNAUTHENTICATED,        // Initial state, the user needs to authenticate
+//        UNAUTHENTICATED,        // Initial state, the user needs to authenticate
         AUTHENTICATED,          // The user has authenticated successfully
         INVALID_AUTHENTICATION  // Authentication failed
     }
@@ -33,7 +33,7 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void refuseAuthentication() {
-        authenticationState.setValue(AuthenticationState.UNAUTHENTICATED);
+        authenticationState.setValue(AuthenticationState.INVALID_AUTHENTICATION);
     }
 
     private boolean passwordIsValidForUsername(String username, String password) {

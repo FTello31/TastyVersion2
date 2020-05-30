@@ -16,6 +16,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -93,15 +95,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 Toast.makeText(MainActivity.this, "" + destination.getLabel(), Toast.LENGTH_LONG).show();
                 toolbar.setTitle(destination.getLabel());
-//                if (destination.getId() == R.id.action_global_loginFragment) {
-////                    toolbar.setVisibility(View.GONE);
-//                   getSupportActionBar().hide();
-//
-////                    bottomNavigationView.setVisibility(View.GONE);
-//                } else {
-//                    toolbar.setVisibility(View.VISIBLE);
-////                    bottomNavigationView.setVisibility(View.VISIBLE);
-//                }
             }
         });
 
@@ -121,6 +114,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.app_bar_logOut) {
+            SharedPreferences preferences =getSharedPreferences("SharedPreferences",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.clear();
+            editor.commit();
+
             viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
             viewModel.refuseAuthentication();
             navController.popBackStack(R.id.home, false);

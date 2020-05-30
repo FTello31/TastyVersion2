@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     tools:context=".Fragments.LoginFragment">
 <!--    android:background="@drawable/side_nav_bar"-->
 
@@ -35,36 +36,49 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:hint="@string/user"
             android:inputType="text"
             android:maxLines="1"
             android:selectAllOnFocus="true"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textColorHint="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toTopOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.811"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintVertical_bias="0.811" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textColorHint="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toTopOf="@+id/login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loading"
-            app:layout_constraintVertical_bias="0.691"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintVertical_bias="0.691" />
+
 
         <Switch
             android:id="@+id/switchRemember"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:text="Remember"
+            android:textColor="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toTopOf="@+id/login"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
-
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintVertical_bias="0.461" />
 
         <Button
             android:id="@+id/login"
@@ -105,7 +119,7 @@
             android:gravity="center"
             android:text="No account yet? Create one"
             android:textSize="16sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.781"

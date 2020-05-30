@@ -10,6 +10,10 @@
 
     </style>
 
+<!--    <style name="splashScreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">-->
+<!--        <item name="android:windowBackground">@drawable/splash_screen</item>-->
+<!--    </style>-->
+
 <!--&lt;!&ndash;    theme para el app_bar_main &ndash;&gt;-->
 <!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
 
