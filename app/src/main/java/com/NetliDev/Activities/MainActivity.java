@@ -114,10 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.app_bar_logOut) {
-            SharedPreferences preferences =getSharedPreferences("SharedPreferences",Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.clear();
-            editor.commit();
+            clearSharedPreferences();
 
             viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
             viewModel.refuseAuthentication();
@@ -143,6 +140,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    public void clearSharedPreferences(){
+        SharedPreferences preferences = getSharedPreferences("SharedPreferences",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
 
     
 }

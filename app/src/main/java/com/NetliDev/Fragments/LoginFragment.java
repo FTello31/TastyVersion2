@@ -36,7 +36,7 @@ public class LoginFragment extends Fragment {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button loginButton;
-    private Switch switchRemember;
+//    private Switch switchRemember;
     private ProgressBar loadingProgressBar;
     private SharedPreferences sharedPref;
 
@@ -70,7 +70,7 @@ public class LoginFragment extends Fragment {
         usernameEditText = view.findViewById(R.id.username);
         passwordEditText = view.findViewById(R.id.password);
         loadingProgressBar = view.findViewById(R.id.loading);
-        switchRemember = view.findViewById(R.id.switchRemember);
+//        switchRemember = view.findViewById(R.id.switchRemember);
 
         sharedPref = getActivity().getSharedPreferences("SharedPreferences", Context.MODE_PRIVATE);
         setPreferencesIfExist();
@@ -128,24 +128,20 @@ public class LoginFragment extends Fragment {
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)) {
             usernameEditText.setText(email);
             passwordEditText.setText(pass);
-//            viewModel.authenticate(email,pass);
+            viewModel.authenticate(email,pass);
         }
 
     }
 
     private void saveSharedPreferences(String email, String pass) {
-        if (switchRemember.isChecked()) {
-
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString("email", email);
             editor.putString("pass", pass);
-            
             // synchronous
             // editor.commit();
 
             // asynchronous
             editor.apply();
-        }
 
     }
 

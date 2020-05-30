@@ -68,17 +68,17 @@
             app:layout_constraintVertical_bias="0.691" />
 
 
-        <Switch
-            android:id="@+id/switchRemember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="Remember"
-            android:textColor="@color/design_default_color_on_primary"
-            app:layout_constraintBottom_toTopOf="@+id/login"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.461" />
+<!--        <Switch-->
+<!--            android:id="@+id/switchRemember"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:text="Remember"-->
+<!--            android:textColor="@color/design_default_color_on_primary"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/login"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/password"-->
+<!--            app:layout_constraintVertical_bias="0.461" />-->
 
         <Button
             android:id="@+id/login"
