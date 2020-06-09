@@ -90,7 +90,6 @@ public class LoginFragment extends Fragment {
                 new OnBackPressedCallback(true) {
                     @Override
                     public void handleOnBackPressed() {
-                        // is the black triangle back button in the bottom of the screen
                         viewModel.refuseAuthentication();
                         Toast.makeText(getContext(), "popBackStack main_fragment", Toast.LENGTH_SHORT).show();
                         navController.popBackStack(R.id.home, false);

@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment {
                     public void onChanged(LoginViewModel.AuthenticationState authenticationState) {
                         switch (authenticationState) {
                             case AUTHENTICATED:
-//                                showWelcomeMessage();
                                 Toast.makeText(getContext(), "HOME FRAGMENT AUHTENTICATED", Toast.LENGTH_SHORT).show();
                                 break;
 //                            case UNAUTHENTICATED:
@@ -77,7 +76,6 @@ public class HomeFragment extends Fragment {
 //                                navController.navigate(R.id.action_global_loginFragment);
 //                                break;
                             case INVALID_AUTHENTICATION:
-//                                Toast.makeText(getContext(), "HOME FRAGMENT INVALID_AUTHENTICATION", Toast.LENGTH_SHORT).show();
                                 navController.navigate(R.id.action_global_loginFragment);
                                 break;
                         }

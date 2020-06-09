@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Home");
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation);
@@ -62,22 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
-//        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
-//                this,
-//                drawerLayout,
-//                toolbar,
-//                R.string.NavigationOpen,
-//                R.string.NavigationClose
-//        );
-//
-//
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
-//        navigationView.setNavigationItemSelectedListener(this);
-//
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        NavigationUI.setupWithNavController(navigationView, navController);
-
         // make clickable the image in the navigation view header
         View header = navigationView.getHeaderView(0);
         ImageView image = header.findViewById(R.id.imageView);
@@ -85,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 drawerLayout.closeDrawer(GravityCompat.START);
-//                Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment)
                 navController.navigate(R.id.action_global_myAccountFragment);
             }
         });

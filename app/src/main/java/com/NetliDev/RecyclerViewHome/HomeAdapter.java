@@ -29,9 +29,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeViewHolder>  {
         View view = layoutInflater.inflate(R.layout.list_item_home, parent,false);
 
         return new HomeViewHolder(view);
-//        View v = LayoutInflater.from(viewGroup.getContext())
-//                .inflate(R.layout.item_lista_inicio, viewGroup, false);
-//        return new ViewHolder(v);
     }
 
     @Override

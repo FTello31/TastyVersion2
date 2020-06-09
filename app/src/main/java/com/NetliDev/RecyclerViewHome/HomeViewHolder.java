@@ -11,7 +11,6 @@ import com.NetliDev.R;
 
 public class HomeViewHolder  extends RecyclerView.ViewHolder {
 
-    // Campos respectivos de un item
     public TextView nombre;
     public TextView precio;
     public ImageView imagen;

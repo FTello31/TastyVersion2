@@ -24,13 +24,6 @@
                 android:contentDescription="Background Salesman Image"
                 android:scaleType="centerCrop" />
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/image_salesman"-->
-            <!--                android:layout_width="60dp"-->
-            <!--                android:layout_height="60dp"-->
-            <!--                android:layout_gravity="left|bottom"-->
-            <!--                android:background="@drawable/cuenta"-->
-            <!--                />-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

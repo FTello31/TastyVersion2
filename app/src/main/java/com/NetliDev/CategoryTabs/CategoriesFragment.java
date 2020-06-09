@@ -44,13 +44,8 @@ public class CategoriesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
         ViewPager viewPager = view.findViewById(R.id.viewPager);
         TabLayout tabLayout = view.findViewById(R.id.tabs);
-//        tabs.addTab(tabs.newTab().setText("Tab adddd"));
-//        tabs.addTab(tabs.newTab().setText("Tab adddd"));
-//        tabs.addTab(tabs.newTab().setText("Tab adddd"));
-
 
         tabLayout.setupWithViewPager(viewPager);
-
         TabsViewPagerAdapter tabsViewPagerAdapter = new TabsViewPagerAdapter(getChildFragmentManager(),0);
         tabsViewPagerAdapter.addFragment(sandwichFragment,"Sandwiches");
         tabsViewPagerAdapter.addFragment(dessertsFragment,"Desserts");
@@ -62,10 +57,9 @@ public class CategoriesFragment extends Fragment {
 //        tabLayout.getTabAt(1).setIcon(R.drawable.ic_home_black_24dp);
 //        tabLayout.getTabAt(2).setIcon(R.drawable.ic_home_black_24dp);
 
-
-        BadgeDrawable badgeDrawable = tabLayout.getTabAt(0).getOrCreateBadge();
-        badgeDrawable.setVisible(true);
-        badgeDrawable.setNumber(10);
+//        BadgeDrawable badgeDrawable = tabLayout.getTabAt(0).getOrCreateBadge();
+//        badgeDrawable.setVisible(true);
+//        badgeDrawable.setNumber(10);
 
 
         return view;

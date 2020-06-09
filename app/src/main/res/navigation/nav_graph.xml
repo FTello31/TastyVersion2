@@ -8,16 +8,11 @@
     <action
         android:id="@+id/action_global_myAccountFragment"
         app:destination="@id/myAccountFragment" />
-    <!--    <fragment-->
-    <!--        android:id="@+id/viewBalanceFragment"-->
-    <!--        android:name="com.NetliDev.CategoryTabs.CategoriesFragment"-->
-    <!--        android:label="fragment_view_balance"-->
-    <!--        tools:layout="@layout/fragment_view_balance" />-->
-
 
     <action
         android:id="@+id/action_global_loginFragment"
         app:destination="@id/loginFragment" />
+
 
     <fragment
         android:id="@+id/salesman"
@@ -49,9 +44,7 @@
         android:name="com.NetliDev.Fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
-        <!--        <action-->
-        <!--            android:id="@+id/action_mainFragment_to_sendMoneyGraph"-->
-        <!--            app:destination="@id/sendMoneyGraph" />-->
+
         <action
             android:id="@+id/action_homeFragment_to_categoriesFragment"
             app:destination="@id/categories" />
@@ -61,22 +54,4 @@
 
     </fragment>
 
-    <!--    <navigation-->
-    <!--        android:id="@+id/sendMoneyGraph"-->
-    <!--        app:startDestination="@id/chooseRecipient">-->
-    <!--        <fragment-->
-    <!--            android:id="@+id/chooseRecipient"-->
-    <!--            android:name="com.example.cashdog.cashdog.ChooseRecipient"-->
-    <!--            android:label="fragment_choose_recipient"-->
-    <!--            tools:layout="@layout/fragment_choose_recipient">-->
-    <!--            <action-->
-    <!--                android:id="@+id/action_chooseRecipient_to_chooseAmountFragment"-->
-    <!--                app:destination="@id/chooseAmountFragment" />-->
-    <!--        </fragment>-->
-    <!--        <fragment-->
-    <!--            android:id="@+id/chooseAmountFragment"-->
-    <!--            android:name="com.example.cashdog.cashdog.ChooseAmountFragment"-->
-    <!--            android:label="fragment_choose_amount"-->
-    <!--            tools:layout="@layout/fragment_choose_amount" />-->
-    <!--    </navigation>-->
 </navigation>

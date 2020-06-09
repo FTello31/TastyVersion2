@@ -10,20 +10,9 @@
 
     </style>
 
-<!--    <style name="splashScreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">-->
-<!--        <item name="android:windowBackground">@drawable/splash_screen</item>-->
-<!--    </style>-->
-
-<!--&lt;!&ndash;    theme para el app_bar_main &ndash;&gt;-->
-<!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
-
 <!--    theme para el menu ... del appbar-->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-<!--    <style name="AppTheme.NoActionBar">-->
-<!--        <item name="windowActionBar">false</item>-->
-<!--        <item name="windowNoTitle">true</item>-->
-<!--    </style>-->
     <!--        DarkTheme-->
 <!--    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">-->
 <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
