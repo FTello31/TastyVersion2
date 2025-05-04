@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace = "com.NetliDev"
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.NetliDev"
@@ -17,7 +18,6 @@ android {
         }
     }
 }
-
 dependencies {
     def nav_version = "2.2.2"
 
